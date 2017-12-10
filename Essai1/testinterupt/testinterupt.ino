@@ -12,7 +12,7 @@ volatile int frequence=10000;
 
 unsigned long timeelapsed;
 
-
+// coucou petite modif de githubweb
 
 
 void setup() {
@@ -84,7 +84,7 @@ ISR(TIMER3_COMPB_vect)// interuption toute les 4.16 sec
 
 	for (int i = 1; i <= 10; i++) // envoi des 10 pulse
 	{
-		unsigned long previousT = timer2.get_count();// reinitialise les timer pour avoir un bon délai
+		unsigned long previousT = timer2.get_count();// reinitialise les timer pour avoir un bon dÃ©lai
 		digitalWriteFast(10, HIGH);
 		unsigned long currenT = previousT;
 		timeelapsed = 0;
