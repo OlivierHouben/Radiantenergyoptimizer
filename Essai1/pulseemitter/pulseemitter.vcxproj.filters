@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="essaiforum.ino" />
+    <None Include="pulseemitter.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.essaiforum.vsarduino.h">
+    <ClInclude Include="__vm\.pulseemitter.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.0
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Essai1", "Essai1\Essai1.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlinkWithoutDelay", "..\My Examples\131566237317373091\BlinkWithoutDelay\BlinkWithoutDelay.vcxproj", "{749E2184-4586-413E-9D04-DCC6A77B5053}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Blink", "..\My Examples\131566242042596825\Blink\Blink.vcxproj", "{18AEEA8D-F711-404B-B46F-CBC0B3898A5D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Essai2", "Essai2\Essai2.vcxproj", "{26CA83FC-443A-4166-B417-14EEC2DAE2F7}"
 EndProject
@@ -31,7 +27,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Radiantenergymesurer", "Rad
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testinterupt", "testinterupt\testinterupt.vcxproj", "{6A2FBA92-7D44-42DE-99C2-F056403DC012}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "essaiforum", "essaiforum\essaiforum.vcxproj", "{7A63AD4B-056B-44DE-BE93-4711A5D13B35}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pulseemitter", "pulseemitter\pulseemitter.vcxproj", "{7A63AD4B-056B-44DE-BE93-4711A5D13B35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,14 +39,6 @@ Global
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
 		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
-		{749E2184-4586-413E-9D04-DCC6A77B5053}.Debug|x86.ActiveCfg = Debug|Win32
-		{749E2184-4586-413E-9D04-DCC6A77B5053}.Debug|x86.Build.0 = Debug|Win32
-		{749E2184-4586-413E-9D04-DCC6A77B5053}.Release|x86.ActiveCfg = Release|Win32
-		{749E2184-4586-413E-9D04-DCC6A77B5053}.Release|x86.Build.0 = Release|Win32
-		{18AEEA8D-F711-404B-B46F-CBC0B3898A5D}.Debug|x86.ActiveCfg = Debug|Win32
-		{18AEEA8D-F711-404B-B46F-CBC0B3898A5D}.Debug|x86.Build.0 = Debug|Win32
-		{18AEEA8D-F711-404B-B46F-CBC0B3898A5D}.Release|x86.ActiveCfg = Release|Win32
-		{18AEEA8D-F711-404B-B46F-CBC0B3898A5D}.Release|x86.Build.0 = Release|Win32
 		{26CA83FC-443A-4166-B417-14EEC2DAE2F7}.Debug|x86.ActiveCfg = Debug|Win32
 		{26CA83FC-443A-4166-B417-14EEC2DAE2F7}.Debug|x86.Build.0 = Debug|Win32
 		{26CA83FC-443A-4166-B417-14EEC2DAE2F7}.Release|x86.ActiveCfg = Release|Win32

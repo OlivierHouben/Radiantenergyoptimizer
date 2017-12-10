@@ -15,7 +15,7 @@ volatile int Tableautensioncondo[nombrevaleurtableau];
 volatile int pointeurtableau = 0;
 volatile boolean ADCfinish;
 
-volatile int pulsesent;
+int pulsesent;
 
 long frequence = 10000;
 
@@ -41,6 +41,7 @@ void setup() {
 	//timer2init(); // envoie 10 pulse
 	
 	pinMode(9, OUTPUT);
+	pinMode(A0, INPUT);
 	for (int i = 0; i < 10; i++)
 	{
 
@@ -75,8 +76,8 @@ void loop() {
 
 
 
-		//TIMSK1 |= (1 << OCIE1A);// on autorise le debut de l'echantillonage ADC
-		//tstartADCgeneral = millis();
+		TIMSK1 |= (1 << OCIE1A);// on autorise le debut de l'echantillonage ADC
+		tstartADCgeneral = millis();
 		while (pulsesent < 10) // on boucle tant que on a pas envoyer les 10 pulses
 		{
 
@@ -88,36 +89,40 @@ void loop() {
 				//if (OCR2B == OCR2A) // petit tweak pour empecher un bug , on reste a 99% max de duty cycle
 					//OCR2B--;
 
-				TIFR2 |= (1 << TOV2); // reclear le flag			
+				TIFR2 |= (1 << TOV2); // reclear le flag
+
+
 				
 			}
 
-			//if (ADCfinish = true)// on imprime sur le serial
-			//{
+			if (ADCfinish = true)// on imprime sur le serial
+			{
+				Serial.println(tableauTstartADC[pointeurtableau]);
+				Serial.println(Tableautensioncondo[pointeurtableau]);
 
-
-			//	ADCfinish = false;
-			//}
+				ADCfinish = false;
+			}
 
 
 		}
 		TCCR2A = 0; // reset le timer2
 		TCCR2B = 0;
 
-		/*tactuADCgeneral = millis();
+		tactuADCgeneral = millis();
 		while (tactuADCgeneral - tstartADCgeneral < 1000)
 		{
 
 			if (ADCfinish = true)
 			{
-
+				Serial.println(tableauTstartADC[pointeurtableau]);
+				Serial.println(Tableautensioncondo[pointeurtableau]);
 
 				ADCfinish = false;
 			}
 			tactuADCgeneral = millis();
 
 		}
-		TIMSK1 |= (1 << OCIE1A);*/
+		TIMSK1 |= (0 << OCIE1A);
 
 		
 
@@ -142,7 +147,7 @@ ISR(TIMER3_OVF_vect)// toute les 4.16 sec
 {
 
 	envoipulse = true;
-	//TIMSK1 |= (1 << OCIE1A);// on autorise l'enregistrement de valeur du condo
+	
 	TCNT3 = 50000;
 
 }
@@ -151,6 +156,9 @@ ISR(TIMER3_OVF_vect)// toute les 4.16 sec
 ISR(TIMER1_COMPA_vect) // 5 khz toute les 200us
 {
 	pointeurtableau++;
+	if (pointeurtableau > nombrevaleurtableau)
+		pointeurtableau = 0;
+
 	tableauTstartADC[pointeurtableau] = micros();
 	Tableautensioncondo[pointeurtableau] = analogRead(A0);
 
